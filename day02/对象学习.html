@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象学习+实例-2016年1月18日</title>
+</head>
+<body>
+<script>
+    var xiaoming = {
+        name:'小明',
+        birth:1984,
+        school:'No. 1 Middle School',
+        height:1.70,
+        weight:63,
+        score:null
+    };
+    /*
+     由于JavaScript的对象是动态类型，你可以自由地给一个对象添加或删除属性
+     */
+    document.writeln(xiaoming.age); // undefined
+    document.writeln(xiaoming.name);
+    xiaoming.age = 18; // 新增一个age属性
+    document.writeln(xiaoming.age); // 18
+    delete xiaoming.age; // 删除age属性
+    document.writeln(xiaoming.age); // undefined
+    delete xiaoming.school; // 删除一个不存在的school属性也不会报错
+
+    document.writeln("<br>");
+    document.writeln('height' in xiaoming);
+    document.writeln('grade' in xiaoming);
+    document.writeln('toString' in xiaoming);
+    var b1=xiaoming.hasOwnProperty('name');
+    var b2=xiaoming.hasOwnProperty('toString');
+    document.writeln("<br>"+b1+" "+b2);
+
+</script>
+</body>
+</html>
