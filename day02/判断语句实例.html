@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断语句实例</title>
+    <script src="if.js"></script>
+</head>
+<body>
+<script>
+    var xiaoming={
+        height:null,
+        weight:null,
+        name:null
+    }
+    xiaoming.name='小明';
+
+    var h=xiaoming.height=parseFloat(prompt('请输入身高(M)'));
+    var w=xiaoming.weight=parseFloat(prompt('请输入体重(Kg)'));
+
+    document.writeln(xiaoming.name+"的身高是"+h+"米");
+    document.writeln("体重是"+w+"公斤");
+    var str1=bmi(w,h);
+    document.writeln("BMI"+str1);
+</script>
+</body>
+</html>
