@@ -5,10 +5,10 @@ function if_panduan() {
     var age = 3;
     if (age >= 18) {
         document.writeln('adult');
-    } else if (age >= 6) {
-        document.writeln('teenager');
-    } else {
+    } else if (age < 6) {
         document.writeln('kid');
+    } else {
+        document.writeln('teenager');
     }
 }
 function  bmi(w,h){
