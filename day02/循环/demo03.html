@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>循环实例3--while and do..while</title>
+    <style type="text/css">
+    	code{
+    		display: block;
+    		border: 1px solid #000;
+    		width: 80%;
+    		color: lightgreen;
+    		background-color: black;
+    		font-family: sans-serif;
+    		padding: 5px;
+    		margin: 5px;
+
+    	}
+    </style>
+</head>
+<body>
+	<article>
+		<h1>while循环</h1>
+		<p>for循环在已知循环的初始和结束条件时非常有用。而上述忽略了条件的for循环容易让人看不清循环的逻辑，此时用while循环更佳。</p>
+		<p>while循环只有一个判断条件，条件满足，就不断循环，条件不满足时则退出循环。比如我们要计算100以内所有奇数之和，可以用while循环实现：</p>
+		<code>
+		<pre>
+		var x = 0;
+		var n = 99;
+		while (n > 0) {
+		    x = x + n;
+		    n = n - 2;
+		}
+		x; // 2500
+			</pre>
+		</code>
+	<hr>
+	<h1>do..while循环</h1>
+	<p>最后一种循环是do { ... } while()循环，它和while循环的唯一区别在于，不是在每次循环开始的时候判断条件，而是在每次循环完成的时候判断条件：</p>
+	<code>
+	<pre>
+	var n = 0;
+	do {
+	    n = n + 1;
+	} while (n < 100);
+	n; // 100
+	</pre>
+	</code>
+	<blockquote>用do { ... } while()循环要小心，循环体会至少执行1次，而for和while循环则可能一次都不执行。</blockquote>
+	</article>
+</body>
+</html>

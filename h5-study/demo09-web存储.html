@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web存储</title>
+</head>
+<body>
+<script>
+    if(localStorage.pagecount){
+        localStorage.pagecount=Number(localStorage.pagecount)+1;
+    }else{
+        localStorage.pagecount=1;
+    }
+    document.writeln("访问： "+localStorage.pagecount+" times(s)");
+</script>
+<blockquote><a href="http://www.w3school.com.cn/html5/html_5_webstorage.asp"> http://www.w3school.com.cn/html5/html_5_webstorage.asp</a></blockquote>
+</body>
+</html>

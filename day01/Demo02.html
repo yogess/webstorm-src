@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+本文件说明浮点数的相等判断的方法
+liaoxuefeng.com
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>浮点数的相等判断-廖雪峰js教程</title>
+    <style type="text/css">
+        #code1 {
+            display: block;
+            height:50px;
+            color: blue;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<h1>浮点数的比较操作</h1>
+<code id="code1">
+    document.write("1/3 和(1-2/3) 的相等判断"+(1/3===(1-2/3)));<br>
+    document.write("Math.abs(1/3-(1-2/3))<0.0000001 的结果是"+ (Math.abs(1/3-(1-2/3))<0.0000001));
+</code><br>
+
+<script>
+    document.write("1/3 和(1-2/3) 的相等判断"+(1/3===(1-2/3))+"<br>");
+    document.write("Math.abs(1/3-(1-2/3))<0.0000001 的结果是"+ (Math.abs(1/3-(1-2/3))<0.0000001));
+</script>
+
+<p>
+需要注意的是浮点数的相等比较：浮点数在运算过程中会产生误差，因为计算机无法精确表示无限循环小数。<br>
+    要比较两个浮点数是否相等，只能计算它们之差的绝对值，看是否小于某个阈值。
+</p>
+</body>
+</html>

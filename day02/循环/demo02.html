@@ -2,9 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>循环实例2-for...in</title>
 </head>
 <body>
 
+<p>for循环的3个条件都是可以省略的，如果没有退出循环的判断条件，就必须使用break语句退出循环，否则就是死循环。</p>
+<script type="text/javascript">
+	var arr1=['apple','google','microsoft'];
+	var i,x;
+	for(i=0;i<arr1.length;i++){
+		x=arr1[i];
+		document.writeln(x);
+	}
+</script>
+<hr>
+<p>for循环的一个变体是 for...in 循环，它可以把一个对象的所有属性依次循环出来：</p>
+<pre><code>
+	var o={
+		name:'Yogess',
+		age:20,
+		city:'郑州'
+	} 
+
+	for(var key in o){
+		if(o.hasOwnProperty(key)){
+			alert(key);//过滤对象继承的属性，用hasOwnProperty()来实现。
+		}
+		document.writeln(key);
+	}
+
+</code></pre>
+<h3>程序输入结果如下：</h3>
+<script type="text/javascript">
+	var o={
+		name:'Yogess',
+		age:20,
+		city:'郑州'
+	} 
+
+	for(var key in o){
+		document.writeln(key);
+	}
+</script>
+<hr>
+<p>由于Array也是对象，而它的每个元素的索引被视为对象的属性。<br>
+	因此，for...in循环可以直接循环出Array的索引：</p>
+	<pre><code>
+		var a=['a','b','c'];
+		for(var i in a) {
+			document.writeln(i);
+			document.writeln(a[i]);
+		}
+	</code></pre>
+	<h3>程序输出结果如下：</h3>
+<script type="text/javascript">
+	var a=['a','b','c'];
+	for(var i in a) {
+			document.writeln(i+":");
+			document.writeln(a[i]+";");
+	}
+</script>
+<blockquote>请注意，for...in对Array的循环得到的是String而不是Number</blockquote>
+<hr>
+<h1>2016年1月18日22:48:04</h1>
+
+<div id="id">
+	<div id="id2"></div>
+</div>
 </body>
 </html>

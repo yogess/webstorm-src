@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>demo07-画布操作2</title>
+    <style type="text/css">
+        #myCanvas,#myCanvas2,#myCanvas3,#myCanvas4{
+            border:1px solid darkred;
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <hr width="90%">
+    <canvas id="myCanvas2"></canvas>
+    <hr width="90%">
+    <canvas id="myCanvas3"></canvas>
+    <hr width="90%">
+    <canvas id="myCanvas4">你的浏览器不支持画布元素</canvas>
+    <script>
+        var c=document.getElementById("myCanvas");
+        var cxt= c.getContext("2d");
+        cxt.moveTo(10,10);
+        cxt.lineTo(150,50);
+        cxt.lineTo(10,50);
+        cxt.stroke();
+
+        var c2=document.getElementById("myCanvas2");
+        var ctx2=c2.getContext("2d");
+        ctx2.fillStyle="#ff0000";
+        ctx2.beginPath();
+        ctx2.arc(70,18,15,0,Math.PI*2,true);
+        ctx2.closePath();
+        ctx2.fill();
+
+        var c3=document.getElementById("myCanvas3");
+        var ctx3=c3.getContext("2d");
+        var grd=ctx3.createLinearGradient(0,0,175,50);
+        grd.addColorStop(0,"#ff0000");
+        grd.addColorStop(1,"#00ff00");
+        ctx3.fillStyle=grd;
+        ctx3.fillRect(0,0,175,50);
+
+        var c4=document.getElementById("myCanvas4");
+        var ctx4=c4.getContext("2d");
+        var img=new Image();
+        img.src="http://www.w3school.com.cn/i/ct_html5_canvas_image.gif";
+        ctx4.drawImage(img,0,0);
+    </script>
+</body>
+</html>

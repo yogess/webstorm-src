@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web Workers</title>
+</head>
+<body>
+<p>Countnumbers：<output id="result" ></output> </p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+<script>
+    var w;
+
+    function  startWorker()
+    {
+        if (typeof(Worker) !== "undefined") {
+            if (typeof(w) == "undefined") {
+                w = new Worker("demo_worker.js");
+            }
+            w.onmessage = function (event) {
+                document.getElementById("result").innerHTML = event.data;
+            }
+        }
+        else {
+            document.writeln("Sorry!No Web Worker support...");
+        }
+    }
+    function  stopWorker()
+    {
+        w.terminate();
+    }
+</script>
+</body>
+</html>

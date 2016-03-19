@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串-廖雪峰javascript教程</title>
+    <style>
+        * {
+            font-family: "Arial Black";
+            font-size: 12px;
+            color: black;
+        }
+        h1 {
+            font-size: 16px;
+            color:green;
+        }
+        h2 {
+            font-size:14px;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.writeln("I\'m \"ok!");//转义字符的使用。
+        document.writeln("\x41");//\x是十六进制的表示。
+        document.writeln("\u4e2d\u6587");//\u####表示一个Unicode字符。
+
+        var s='hello,world!';
+        document.writeln(s+' 的长度是'+s.length+"<br>");
+
+        for(var i=0;i< s.length;i++){
+            document.writeln("s["+i+"]="+s[i]+"\t;<br>");
+        }
+
+        document.write("超出范围的索引不会报错，但一律返回"+s[13]+"。<br><br>");
+        s[0]='X';
+        document.write("经过赋值修改s[0]='x'之后，"+"s[0]仍然="+s[0]+"<br>");
+        document.write("因为字符串是不可变的。如果对字符串的某个索引赋值，不会有任何错误。但是也没有任何效果。<br>");
+
+        var s2=s.toUpperCase();
+        document.write(s2+"是s.toUpperCase()的返回结果<br>");
+        var s3=s.toLowerCase();
+        document.write(s3+"是s.toLowerCase()的返回结果<br>");
+
+        var n1=s2.indexOf("W");
+        document.write(n1);
+        var n2=s2.lastIndexOf("L");//搜索制定字符串最后出现的位置。
+        var n3=s2.indexOf("L");
+        document.writeln(n2+" "+n3);
+
+        var n4= s.indexOf("world");//搜索一个字符串的话，是搜索字符串第一个字符出现的位置。
+        document.writeln(n4);
+        var n5= s.indexOf("World"); //因为第一个字符是大写的W，所以没有找到制定的字符，返回 -1 。
+        document.writeln(n5+"<br>");
+
+        var n6= s.substr(1,2);
+        document.writeln(n6);
+        var n7= s.substring(1,2);
+        document.writeln(n7);
+
+
+
+
+    </script>
+
+    <h1>substr方法和substring方法的区别</h1>
+    <pre>
+        <h2>substr 方法</h2>
+    返回一个从指定位置开始的指定长度的子字符串。
+    stringvar.substr(start [, length ])
+    参数
+    stringvar
+    必选项。要提取子字符串的字符串文字或 String 对象。
+    start
+    必选项。所需的子字符串的起始位置。字符串中的第一个字符的索引为 0。
+    length
+    可选项。在返回的子字符串中应包括的字符个数。
+    说明
+    如果 length 为 0 或负数，将返回一个空字符串。如果没有指定该参数，则子字符串将延续到 stringvar 的最后。
+    </pre><br>
+    <pre>
+        <h2>substring 方法</h2>
+    返回位于 String 对象中指定位置的子字符串。
+    strVariable.substring(start, end)
+    "String Literal".substring(start, end)
+    参数
+    start
+    指明子字符串的起始位置，该索引从 0 开始起算。
+    end
+    指明子字符串的结束位置，该索引从 0 开始起算。
+    说明
+    substring 方法将返回一个包含从 start 到最后（不包含 end ）的子字符串的字符串。
+    substring 方法使用 start 和 end 两者中的较小值作为子字符串的起始点。例如， strvar.substring(0, 3) 和 strvar.substring(3, 0) 将返回相同的子字符串。
+    如果 start 或 end 为 NaN 或者负数，那么将其替换为0。
+    子字符串的长度等于 start 和 end 之差的绝对值。例如，在 strvar.substring(0, 3) 和 strvar.substring(3, 0) 返回的子字符串的的长度是 3。
+    </pre>
+</body>
+</html>

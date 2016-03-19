@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Map学习实例</title>
+    <style>
+        code {
+            display: block;
+            background-color: black;
+            color: lightgreen;
+            padding: 10px 20px;
+            line-height: 1.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Map</h1>
+    <h2>
+        Map是一组键值对的结构，具有极快的查找速度。
+    </h2>
+    <code>
+        var names=['michael','bob','tracy'];
+        var scores=[95,75,85];
+    </code>
+    <p>
+        给定一个名字，要查找对应的成绩，就先要在names中找到对应的位置，再从scores取出对应的成绩，Array越长，耗时越长。
+        <br> 如果用Map实现，只需要一个“名字”-“成绩”的对照表，直接根据名字查找成绩，无论这个表有多大，查找速度都不会变慢。用JavaScript写一个Map如下：
+    </p>
+    <code>
+        var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);<br>
+        m.get('Michael'); // 95
+    </code>
+    <h3>代码运行结果如下：</h3>
+    <script>
+        var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+        document.writeln(m.get('Michael')); 
+    </script>
+    <h3>更多代码示例：</h3>
+    <h4>示例1：初始化Map需要一个二维数组，或者直接初始化一个空Map。Map具有以下方法：</h4>
+    <code>
+        var m = new Map(); // 空Map<br>
+        m.set('Adam', 67); // 添加新的key-value<br>
+        m.set('Bob', 59);<br>
+        m.has('Adam'); // 是否存在key 'Adam': true<br>
+        m.get('Adam'); // 67<br>
+        m.delete('Adam'); // 删除key 'Adam'<br>
+        m.get('Adam'); // undefined<br>
+
+    </code>
+    <h4>示例2:由于一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的值冲掉：</h4>
+    <code>
+        var m = new Map();<br>
+        m.set('Adam', 67);<br>
+        m.set('Adam', 88);<br>
+        m.get('Adam'); // 88<br>
+    </code>
+    <hr>
+    <h1>Set</h1>
+    <h3>Set和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key。</h3>
+    <p>要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set：</p>
+    <code>
+        var s1=new Set();//空Set<br>
+        var s2=new Set([1,2,3]);//含有 1,2,3
+    </code>
+    <p>重复元素在Set中自动被过滤</p>
+    <code>
+        var s=new Set([1,2,3,3,'3']);
+        s;//Set{1,2,3,'3'}
+        注意：数字3和字符串'3'是不同的元素。
+    </code>
+    <p>通过add(key)方法可以添加元素到Set中，可以重复添加，但不会有效果：</p>
+    <code>
+        >>> s.add(4)<br>
+        >>> s<br>
+        {1, 2, 3, 4}<br>
+        >>> s.add(4)<br>
+        >>> s<br>
+        {1, 2, 3, 4}</code>
+        <p>通过delete(key)方法可以删除元素：</p>
+        <code>
+        var s = new Set([1, 2, 3]);<br>
+        s; // Set {1, 2, 3}<br>
+        s.delete(3);<br>
+        s; // Set {1, 2}
+    </code>
+</body>
+
+</html>
