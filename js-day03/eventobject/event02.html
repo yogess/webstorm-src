@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="div1">
+    <button id="btn1" name="btn1">按钮</button>
+</div>
+<a href="http://www.jikexueyuan.com" id="aid">极客学院网站</a>
+<script>
+    //    function showType(event) {
+    //        window.alert(event.type);
+    //    }
+
+    var btn1 = document.getElementById("btn1");
+    var div1 = document.getElementById("div1");
+    var aid = document.getElementById("aid");
+    btn1.addEventListener("click", showType);
+    btn1.addEventListener("click",showTarget);
+    div1.addEventListener("click",showDiv);
+    aid.addEventListener("click",showA);
+    function showA(evnet){
+        //event.preventDefault();
+    }
+    function showDiv(){
+        window.alert("div1");
+    }
+    function showType(e) {
+        window.alert(e.type);
+        e.stopPropagation();//阻止事件冒泡。也就是不会再监听div的click
+    }
+    function showTarget(event){
+        window.alert(event.target);
+    }
+</script>
+</body>
+</html>

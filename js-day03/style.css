@@ -1,0 +1,11 @@
+
+p{
+     font-size: 10px;
+ }
+.zhongyao{
+    color: #ff0000;
+    border:2px green solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius:5px;
+}

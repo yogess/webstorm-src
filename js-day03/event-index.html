@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="div1">
+    <button id="btn1">按钮</button>
+</div>
+<div id="div2">
+    <h1>DOM事件处理的最重要的一点：</h1>
+    <h1 class="zhongyao">javascript脚本一定要写在body的最后面！！</h1>
+    <h2>这样javascript脚本中的DOM操作语句才能起作用。</h2>
+    <hr>
+    <h2>事件处理 分类：</h2>
+        <ul>
+            <li><a href="event01.html">html事件处理</a>
+                <p>直接添加到html结构中.比如直接在button元素中添加onclick事件</p>
+            </li>
+            <li><a href="event02.html">DOM0级事件处理</a> <p>把一个函数赋值给一个事件处理程序属性</p></li>
+            <li><a href="demo02.html">DOM2级事件处理</a>
+                <p>addEventListener("事件名","事件处理函数","布尔值");</p>
+                <p>true:事件捕获</p>
+                <p>false:事件冒泡</p>
+                <p>removeEventListener();</p>
+            </li>
+            <li>IE事件处理程序
+                <p>attachEvent detachEvent</p>
+                <p>IE版本小于等于8。因此不常用。</p>
+            </li>
+        </ul>
+
+</div>
+</body>
+</html>

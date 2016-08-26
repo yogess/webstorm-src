@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>dom2级 添加事件句柄</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <style type="text/css" rel="stylesheet">
+        .div{
+            width:100px;
+            height: 100px;
+            background-color:red;
+        }
+        </style>
+        <script>
+            function test(){
+                alert("hello");
+            }
+            function test02(){
+                alert("hello again");
+            }
+//            function showType(event){
+//                alert(event.type);
+//            }
+        </script>
+    </head>
+    <body>
+        <p id="pid">hello</p>     
+        <button id="btn">click</button>
+        <script>
+            // document.getElementById("btn").addEventListener("click",test);
+            var x=document.getElementById("btn");
+            /* 可以添加多个事件句柄 
+            add是添加
+            remove是移除
+            addEventListener和removeEventListener两个函数，
+            区分大小写！！
+            */
+            x.addEventListener("click",test);
+            x.addEventListener("click",test02);
+//            x.addEventListener("click",showType);
+//            x.removeEventListener("click",test);
+        </script>
+    </body>
+</html>

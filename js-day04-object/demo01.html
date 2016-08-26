@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>內置對象</title>
+</head>
+<body>
+<h1>什麼是對象</h1>
+
+<p>
+<ul>
+    <li>javascrip中的所有事物都是對象：字符串、數值、數組、函數……</li>
+    <li>每个对象带有属性和方法</li>
+</ul>
+</p>
+<!-- 创建对象-->
+<script>
+    /*第一种创建对象的方法*/
+    //     people = new Object();
+    //     people.name = "zhouang";
+    //     people.age="32";
+    //     document.write("name:"+people.name+",age:"+people.age);
+    /*第二种创建对象的方法*/
+    //    people = {name: "周昂", age: "32"};
+    //    document.write("name:" + people.name + ",age:" + people.age);
+    /*第三种创建对象的方法*/
+    function people(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    son = new people("周昂", "32");
+    document.write("name:" + son.name + ",age:" + son.age);
+</script>
+</body>
+</html>

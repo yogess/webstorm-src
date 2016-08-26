@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>dom操作css</title>
+        <meta charset="utf-8">
+        <style type="text/css" rel="stylesheet">
+        .div{
+            width:100px;
+            height: 100px;
+            background-color:red;
+        }
+            </style>
+    </head>
+    <body>
+        <div id="div1" class="div">hello</div>
+        <button onClick="demo()">改变颜色</button>
+        <script>
+        function demo(){
+            var div1=document.getElementById('div1');
+            div1.style.background="blue";
+            div1.style.color="white";
+        }
+            </script>
+    </body>
+</html>
